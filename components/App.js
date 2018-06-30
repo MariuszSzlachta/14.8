@@ -21,7 +21,7 @@ App = React.createClass({
     }.bind(this));
   },
 
-  getGif = function(searchingText, callback){
+  getGif : function(searchingText, callback){
     var url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;
     var xhr = new XMLHttpRequest()
     xhr.open('GET', url);
