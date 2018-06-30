@@ -20,7 +20,7 @@ App = React.createClass({
         loading: false,
         gif: gif,
         searchingText: searchingText
-      })
+      });
     }.bind(this));
   },
 
