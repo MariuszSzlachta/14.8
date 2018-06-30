@@ -1,4 +1,3 @@
-
 App = React.createClass({
 	getInitialState() {
 		return {
