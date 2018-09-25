@@ -1,9 +1,5 @@
 App = React.createClass({
 	getInitialState() {
-		// ustawienie stanu:
-		// loading false - nic nie ładujemy
-		// searchingText - nic nie pobraliśmy z komponentu search
-		// gif - w związku z tym git to pusty obiekt
 		return {
 			loading: false,
 			searchingText: '',
@@ -12,12 +8,9 @@ App = React.createClass({
 	},
 	
 	handleSearch: function(searchingText) {
-		// obsługuje komunikację z inputem w komponencie search
-		// stan na true bo jak uruchomiliśmy funkcję, to wiadomo, że coś pobieramy
 		this.setState({
 			loading: true
 		});
-		// na podstawie textu pobranego z inputa 
 		this.getGif(searchingText, function(gif) {
 			this.setState({
 				loading: false,
@@ -36,13 +29,12 @@ App = React.createClass({
 
 		xhr.onload = function() {
 			if (xhr.status === 200) {
-				var data = JSON.parse(xhr.responseText).data; 
+				var data = JSON.parse(xhr.responseText).data;
 				var gif = { 
 					url: data.fixed_width_downsampled_url,
 					sourceUrl: data.url
 				};
-			// po co ten callback? Czy to jest odwołanie do funkcji z 21 linijki? Czy chodzi o to, że w ten sposób przekazujemy info to setState ?
-			callback(gif); 
+			callback(gif);
 			}
 		};
     xhr.send();

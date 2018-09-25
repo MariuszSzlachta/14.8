@@ -6,11 +6,9 @@ var styles = {
 
 Gif = React.createClass({
 	getUrl: function() {
-    // funkcja pobiera adres do linku jeśli został przekazany w propsach to go ustawia, jeśli nie to ustawia adres do loadera
 		return this.props.sourceUrl || GIPHY_LOADING_URL;
 	},
 	render: function() {
-    // jeśli props przekazany jako loading jest false to ustaw adres this.props.url, jeśli nie to kółko 
 		var url = this.props.loading ? GIPHY_LOADING_URL : this.props.url;
 
 		return (
